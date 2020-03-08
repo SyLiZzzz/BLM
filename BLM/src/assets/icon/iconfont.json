@@ -1,0 +1,23 @@
+{
+  "id": "1676065",
+  "name": "伯乐教师端",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "554333",
+      "name": "谷歌",
+      "font_class": "iconset0284",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
+      "icon_id": "954426",
+      "name": "火狐",
+      "font_class": "huohu",
+      "unicode": "e72e",
+      "unicode_decimal": 59182
+    }
+  ]
+}

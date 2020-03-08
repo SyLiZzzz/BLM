@@ -1,0 +1,1014 @@
+@mixin flex($items: center, $content: center, $wrap: no-wrap, $direction: row, $flex: flex) {
+  @if ($wrap != no-wrap) {
+    flex-wrap: $wrap;
+  }
+  @else
+  {
+    flex-direction: $direction;
+  }
+  align-items: $items;
+  justify-content: $content;
+  display: $flex;
+}
+@mixin whBg($width: auto, $height: auto, $color: transparent) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+}
+/**
+ * 上课
+ */
+.study {
+  @include whBg(100%)
+  // @include whBg(100%, 100%)
+  @include flex($items: flex-start)
+  /* 左侧右侧通用*/
+  .study-con {
+    // padding-right: 9%;
+    // overflow-y: auto;
+    // @include whBg(115%, 100%)
+    @include whBg(100%)
+    .con-bts {
+      margin: 0.1rem 0;
+      @include whBg($height: .5rem, $color: white)
+      @include flex($content: space-evenly)
+      //按钮
+      .bts {
+        font-family: PingFangSC-Regular;
+        text-align: center;
+        font-size: 0.12rem;
+        border: none;
+        color: white;
+        line-height: 0.32rem;
+        display: inline-block;
+        border-radius: 0.05rem;
+        background-image: linear-gradient(0deg, #166DE0 0%, #2990F2 100%);
+        box-shadow: 0 2px 6px 0 rgba(22,110,224,0.30);
+        @include whBg(100%)
+      }
+    }
+  }
+
+  /* 上课左侧*/
+  .study-aside {
+    overflow: hidden;
+    @include whBg(20%, 100%)
+    .study-con-classCard{
+      margin: .1rem 0;
+      border-radius: 6px;
+      @include whBg($color: rgba(73, 132, 252, 0.8))
+      .con-bts{
+        margin: 0;
+        line-height: 0.5rem;
+        @include whBg($color: initial)
+        li{
+          width: 30%;
+          span{
+            color: #3F3F3F;
+            background-image: none;
+            @include whBg($width: 100%, $color: white)
+          }
+        }
+      }
+    }
+    .con-operation{
+      padding: 0.1rem 0.1rem;
+      h2{
+        color: white;
+        text-align: center;
+        font-size: 0.14rem;
+      }
+    }
+    .study-content {
+      .study-know-list {
+        color: #666666;
+        padding: 0.14rem 0;
+        margin-bottom: 0.1rem;
+        border-top: 0.03rem solid #4074F3;
+        @include whBg($color: white)
+
+        h2 {
+          font-family: PingFangSC-Regular;
+          padding: 0 0.18rem;
+          font-size: 0.14rem;
+          color: #4074F3;
+        }
+
+        .list-courseware {
+          font-size: 0.12rem;
+          font-family: PingFangSC-Regular;
+          @include whBg($color: white)
+          .title {
+            padding: 0 0.18rem;
+            font-size: 0.12rem;
+            line-height: 0.32rem;
+            font-weight: bold;
+            color: #999999;
+          }
+
+          .courseware {
+            padding: 0.05rem 0.18rem;
+            color: #666666;
+            border-left: 2px solid #FFFFFF;
+
+            .iconfont {
+              font-size: 0.18rem;
+              margin-right: 0.05rem;
+            }
+
+            .iconppttubiao {
+              color: #F16B2A;
+            }
+
+            .iconshipin {
+              color: #4074F3;
+            }
+
+
+          }
+          .activeBorder{
+            border-left-color: #FCC800;
+            color: #FCC800;
+          }
+        }
+        .list-subject {
+          ul{
+            padding: 0 0.18rem;
+          }
+          li {
+            display: inline-block;
+            .courseware{
+              border-left: 1px solid #CCCCCC;
+              padding: 0;
+            }
+            span {
+              margin:0 0.03rem 0.06rem;
+              @include whBg(.24rem, .24rem)
+              line-height: 0.22rem;
+              font-size: 0.12rem;
+              display: inline-block;
+              text-align: center;
+              border-radius: 0.03rem;
+              border: 1px solid #CCCCCC;
+            }
+            .activeBorder {
+              color: #FFFFFF;
+              border-color: #FCC800;
+              background-color: #FCC800;
+            }
+          }
+          .title-tip{
+            cursor:default;
+          }
+        }
+      }
+    }
+  }
+
+  /* 上课右侧*/
+  .study-main {
+    @include whBg(80%, 100%)
+    // overflow: hidden;
+    .study-con {
+      @include whBg(100%, 100%)
+      // @include whBg(103%, 100%)
+      padding-left: 2%;
+      // padding-right: 3%;
+      .con-bts {
+        margin: 0;
+        line-height: 0.6rem;
+        @include whBg($height: .6rem, $color: white)
+        li{
+          cursor: default;
+          @include whBg(10%)
+        }
+        .bts {
+          color: #3F3F3F;
+          font-size: 0.14rem;
+          margin: 0;
+          padding: 0;
+          background-image: none;
+          box-shadow: none;
+        }
+
+        .btsActive, .bts:hover {
+          color: white;
+          background-image: linear-gradient(270deg, #166DE0 0%, #2990F2 100%);
+          box-shadow: 0 2px 6px 0 rgba(22, 110, 224, 0.30);
+          border-radius: 1rem;
+        }
+      }
+    }
+
+    .study-main-content {
+      @include whBg(100%)
+      position: relative;
+    }
+  }
+}
+/* 通用背景 */
+.comomon-bg {
+  margin-top: 0.1rem;
+  margin-bottom: 0.6rem;
+  padding:.17rem;
+  @include whBg($width: 100%, $color: white)
+
+  .comomon-bg-set {
+    @include whBg(100%)
+    padding-top: 0.07rem;
+    text-align: center;
+  }
+}
+/* 课次报表 */
+.report {
+  @include whBg($color: white)
+  .tableSpan {
+    padding:0 0.05rem;
+    border-right: 1px solid #CCCCCC;
+    &:last-child{
+      border: none;
+    }
+  }
+  .report-content {
+    @include flex($content: space-between, $wrap: wrap);
+    width: 100%;
+    .Task-Journal {
+      margin-top: 0.24rem;
+      padding: 0.18rem 0;
+      @include whBg($width: 100%, $color: white)
+      border: 1px solid #F0F0F0;
+
+      h2 {
+        padding-bottom: 0.24rem;
+        font-family: PingFangSC-Regular;
+        font-size: 0.16rem;
+        color: #333333;
+        letter-spacing: 0.0028rem;
+        text-align: center;
+      }
+
+      .Practice-chart {
+        @include whBg(46%)
+        .Practice-echarts {
+          @include whBg(100%, 3rem)
+        }
+
+        ul {
+          padding-top: 0.2rem;
+          @include flex
+        }
+
+        li {
+          @include whBg(20%, .52rem)
+          margin-left: 0.1rem;
+          text-align: center;
+          display: inline-block;
+          border: 0.01rem solid #EBEBEB;
+
+          .class-num {
+            font-family: PingFangSC-Regular;
+            font-size: 0.18rem;
+            color: #333333;
+            display: block;
+          }
+
+          .class-style {
+            display: block;
+            font-family: PingFangSC-Regular;
+            font-size: 0.15rem;
+            color: #999999;
+          }
+        }
+
+        .Word {
+          @include whBg(30%)
+        }
+      }
+
+      .Task-Journal-table {
+        padding: 0 2%;
+        text-align: center;
+        @include whBg(100%)
+        @include flex($content: space-between)
+
+        .table {
+          @include whBg(30%)
+          .table-head {
+            margin-bottom: 0.24rem;
+          }
+
+          .table-body {
+            text-align: left;
+            @include flex($content: space-between, $wrap: wrap)
+            button {
+              margin: 0.05rem 0;
+              padding: 0;
+              @include whBg(30%, .32rem)
+            }
+          }
+        }
+
+        button {
+          font-family: PingFangSC-Regular;
+          font-size: 0.14rem;
+          color: black;
+          letter-spacing: 0.0023rem;
+          text-align: center;
+          cursor: default;
+        }
+
+        .bt1 {
+          button {
+            color: #3477F4;
+            border-color: rgba(30, 124, 232, 0.40);
+          }
+
+          .table-head {
+            button {
+              @include whBg($color: rgba(30, 124, 232, 0.10))
+            }
+          }
+        }
+
+        .bt2 {
+          button {
+            color: #35A190;
+            border-color: rgba(87, 207, 188, 0.40);
+          }
+
+          .table-head {
+            button {
+              @include whBg($color: rgba(87, 207, 188, 0.10))
+            }
+          }
+        }
+
+        .bt3 {
+          button {
+            color: #DA960C;
+            border-color: rgba(248, 212, 71, 0.40);
+          }
+
+          .table-head {
+            button {
+              @include whBg($color: rgba(248, 212, 71, 0.10))
+            }
+          }
+        }
+      }
+    }
+
+    .Task-Journal-echarts {
+      margin-top: 0.24rem;
+      border: 0.01rem solid #EBEBEB;
+      @include whBg(32%, 3rem)
+    }
+
+    .conque-chart {
+      border: none;
+    }
+    .flex {
+      @include flex($content: space-around)
+    }
+  }
+}
+
+/**
+* 授课单词页面
+*/
+.word-main {
+  @include whBg(100%)
+  .word-list {
+    @include flex($wrap: wrap, $content: flex-start)
+
+    li {
+      cursor: default;
+      margin-right: 2%;
+      margin-top: 0.1rem;
+      @include whBg(23.5%)
+      .ivu-card {
+        .ivu-card-body {
+          padding: 0.16rem;
+
+          h2 {
+            font-size: 0.16rem;
+            color: #47a3da;
+            font-weight: 600;
+          }
+
+          .word-name {
+            color: #666666;
+            padding: 0.1rem 0;
+            font-size: 0.14rem;
+
+            i {
+              color: #47a3da;
+            }
+          }
+
+          .word-modifiers {
+            font-size: 0.14rem;
+          }
+
+          .word-translate {
+            padding-top: 0.1rem;
+            font-size: 0.14rem;
+          }
+        }
+      }
+    }
+
+    .clear {
+      margin-right: 0;
+    }
+  }
+}
+
+/**
+* 授课布置作业
+*/
+.quill {
+  .quill-editor:not(.bubble) .ql-container, .quill-editor:not(.bubble) .ql-container .ql-editor {
+    height: 2rem;
+  }
+
+  .quill-code {
+    height: auto;
+    border: none;
+
+    > .title {
+      border-left: none;
+      height: 2em;
+      line-height: 2em;
+      text-indent: 1rem;
+      font-weight: bold;
+    }
+
+    > code {
+      width: 100%;
+      margin: 0;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-top: none;
+      border-left: none;
+      border-radius: 0;
+      height: 30rem;
+      overflow-y: auto;
+    }
+  }
+
+  .quillFlag {
+    margin-bottom: 0.23rem;
+  }
+
+  .switch-title {
+    font-family: PingFangSC-Semibold;
+    font-size: 0.16rem;
+    color: #333333;
+    letter-spacing: 0.0059rem;
+  }
+}
+
+/* 课件和视频 */
+.test {
+  @include whBg($width: 100%, $color: white)
+  padding-bottom: 0.75rem;
+
+  .test-setting {
+    @include flex($content: flex-end)
+
+    .ivu-select {
+      @include whBg(15%)
+      margin-right: 5%;
+    }
+  }
+
+  .test-title {
+    h2 {
+      padding: 0.18rem 0;
+      color: #333333;
+      font-size: 0.18rem;
+      text-align: center;
+    }
+  }
+
+  .test-main {
+    @include whBg(100%, 5rem, white)
+    @include flex($content: space-between)
+    position: relative;
+  }
+  .flexStart{
+    align-items: flex-start;
+  }
+  .test-pdf, .test-video {
+    margin: 0 0.5rem;
+    border: 2px solid #F0F0F0;
+    @include whBg(100%, 100%)
+    transition: width 1s;
+    position: relative;
+
+    iframe {
+      @include whBg(100%, 100%)
+    }
+
+    .WHstyle {
+      margin-left: 12.5%;
+      width: 75% !important;
+    }
+
+    .change {
+      display: inline-block;
+      color: white;
+      line-height: 0.44rem;
+      text-align: center;
+      @include whBg(.28rem, .44rem, #4074F3)
+    }
+
+    .arrLeft {
+      left: 0px;
+      top: 45%;
+      position: absolute;
+    }
+
+    .arrRight {
+      right: 0px;
+      top: 45%;
+      position: absolute;
+    }
+
+    .arrNumber {
+      left: 48%;
+      bottom: 0;
+      line-height: 0.3rem;
+      text-align: center;
+      color: white;
+      position: absolute;
+      @include whBg(.48rem, .3rem, #fcc800)
+    }
+    .allScreen{
+      right: .1rem;
+      bottom: .05rem;
+      position: absolute;
+      i{
+        font-size: .4rem;
+        color: rgba(0,0,0,.3);
+      }
+    }
+  }
+
+  .testPdf, .testVideo{
+    @include whBg(48%, 100%)
+    margin: 0;
+  }
+
+  .changing-over {
+    @include whBg(.34rem, .38rem, #fcc800)
+    text-align: center;
+    line-height: 0.38rem;
+    color: white;
+    border-radius: 0.05rem;
+    align-self: center;
+    transition:right 1s;
+    // position: absolute;
+  }
+
+  .changing-over-style {
+    right: -0.17rem;
+    position: absolute;
+  }
+  .changing-start-style{
+    // top:45%;
+    right:48.5%;
+  }
+  .test-code {
+    @include whBg(48%, 100%)
+    padding: 0.2rem;
+    display: none;
+    border: 2px solid #F0F0F0;
+
+    .ace {
+      @include whBg(100%)
+      .ace-setting {
+        padding: 0.1rem 0;
+        @include flex
+
+        .ivu-select {
+          @include whBg(75%)
+        }
+      }
+
+      .code-tips {
+        color: #333333;
+        @include whBg(30%)
+        font-size: 0.17rem;
+      }
+
+      .test-ace {
+        @include whBg($height: 4rem)
+      }
+
+      .test-box {
+        width: 100%;
+        padding-top: .1rem;
+        .box-input {
+          @include whBg(100%)
+          @include flex($items: flex-start)
+          p {
+            width: 52px;
+            font-size: 0.17rem;
+            color: #666666;
+          }
+        }
+      }
+
+      .test-bts {
+        @include flex
+
+        .bt {
+          @include whBg(1rem)
+          margin: 0.1rem 0.1rem 0;
+        }
+      }
+    }
+  }
+
+  .testCode {
+    display: block;
+  }
+}
+/* 概念题 */
+.conque, .topic {
+  @include whBg(100%, 100%, white)
+  padding-bottom: 0.6rem;
+  @include flex($wrap: wrap, $items: flex-start)
+
+  .comomon-bg-set {
+    padding-bottom: 0.2rem;
+    text-align: left;
+
+    .bt {
+      i {
+        margin-right: 0.05rem;
+      }
+
+      padding: 0.06rem 0.16rem;
+    }
+  }
+
+  .ivu-card, .subject {
+    margin-top: 0;
+    @include whBg(54%)
+    .ivu-card-body, li {
+      margin-top: 0.1rem;
+
+      .ivu-checkbox-wrapper, .ivu-radio-wrapper {
+        padding: 0.05rem 0;
+        display: block;
+      }
+
+      h2 {
+        font-size: 0.22rem;
+        line-height: 0.4rem;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 0.2rem;
+      }
+      .title {
+        color: #333333;
+        // font-size: 0.14rem;
+        line-height: 0.3rem;
+        font-family: PingFangSC-Semibold;
+
+        img {
+          max-width: 60%;
+          margin-left: 0.2rem;
+          height: auto;
+        }
+
+        .order {
+          padding-right: 0.14rem;
+          font-size: 0.12rem;
+          color: #3F3F3F;
+          font-weight: normal;
+          letter-spacing: 0.0051rem;
+          line-height: 0.2rem;
+
+          span:nth-child(1) {
+            color: #ee6723;
+          }
+        }
+
+        .state {
+          @include whBg(.6rem, .28rem, #FCC800)
+          line-height: 0.28rem;
+          border-radius: 0.05rem;
+          text-align: center;
+          color: white;
+          display: inline-block;
+          font-size: 0.12rem;
+          letter-spacing: 0.0051rem;
+        }
+      }
+
+      .value {
+        font-size: 0.14rem;
+        color: #151515;;
+      }
+
+      .to-padding {
+        padding: 0.05rem 0.1rem;
+      }
+
+      .Soutput {
+        font-family: PingFangSC-Regular;
+
+        img {
+          @include whBg(30%, 1rem)
+          width: 30%;
+          margin-left: 0.2rem;
+          height: 1rem;
+        }
+        .questionKey{
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .bt-set {
+    margin-top: 0.1rem;
+    font-size: 0.12rem;
+    letter-spacing: 0.006rem;
+    padding: 0;
+    line-height: 0.32rem;
+    @include whBg(1rem, .32rem)
+  }
+
+  .subject_list {
+    margin-left: 1%;
+    @include whBg(45%)
+
+    .ivu-card {
+      @include whBg(100%)
+    }
+
+    .subject_list_set {
+      text-align: left;
+      margin-bottom: 0.2rem;
+
+      .title {
+        text-align: center;
+        padding-bottom: 0.1rem;
+      }
+
+      li {
+        display: inline-block;
+        margin: 0 0.05rem 0.1rem 0.05rem;
+
+        span {
+          @include whBg(.4rem, .4rem)
+          line-height: 0.4rem;
+          display: inline-block;
+          font-size: 0.14rem;
+          text-align: center;
+          border-radius: 0.02rem;
+          border: 0.01rem solid #CCCCCC;
+        }
+
+        .spanActive {
+          color: white;
+          background-color: #FCC800;
+          border: 1px solid #E8AB00;
+        }
+      }
+    }
+
+    .plat {
+      border-top: 0.01rem solid #CCCCCC;
+
+      p {
+        color: #333333;
+        border-bottom: 0.01rem solid #CCCCCC;
+        font-size: 0.14rem;
+        line-height: 0.4rem;
+      }
+    }
+
+    .al-plat {
+      text-align: center;
+      border: none;
+    }
+  }
+
+  .alpo-table {
+    margin-top: 0.5rem;
+
+    .bts {
+      color: #346BF3;
+    }
+
+    .clearbt {
+      color: #346BF3;
+      border: 0.01rem solid #346BF3;
+      @include whBg($color: white)
+      background-image: none;
+    }
+  }
+}
+
+
+/* 点名通用 */
+.calling{
+  padding-top: .17rem;
+  .card-user{
+    margin-bottom: 2px;
+    padding: 0 .1rem .1rem;
+    @include flex($direction: column)
+    &:hover{
+      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+      .tagHidden{
+        display: none;
+      }
+      .calling-con .calling-con-xinxi .selectHidden{
+        display: block;
+      }
+    }
+    .conHeight{
+      line-height: 32px;
+    }
+    .calling-con{
+      @include whBg(100%)
+      // margin-bottom: .1rem;
+      @include flex
+      .con-title{
+        font-size: .14rem;
+        @include whBg(10%)
+      }
+      .calling-con-xinxi{
+        font-size: .14rem;
+        @include whBg(100%)
+        .user-exercise{
+          @include whBg(100%)
+          @include flex($content: space-between)
+        }
+        .selectHidden{
+          display: none;
+        }
+      }
+      .marginP{
+        margin-bottom: .1rem;
+      }
+      .con-xinxi{
+        @include whBg(25%)
+        text-align: left;
+        font-size: .14rem;
+        .time{
+          font-size: 0.14rem;
+          text-align: center;
+          color: #138bee;
+          padding: 0 0.1rem;
+          border: 1px solid #CCCCCC;
+          border-radius: 0.05rem;
+          font-family: PingFangSC-Regular;
+        }
+        .ivu-upload {
+          button{
+            padding: 5px;
+            color:#4074F3;
+            font-size: 0.14rem;
+            background-color: transparent;
+          }
+        }
+        .beforeTime{
+          color: #ee1313;
+        }
+        .update {
+          color: #4074F3;
+        }
+        .submit {
+          color: #FF7E00;
+        }
+        .red{
+          color: red;
+        }
+        .green{
+          color: green;
+        }
+      }
+      .rightP{
+        text-align: right;
+        padding-right: .1rem;
+      }
+    }
+  }
+  .btGroup{
+    text-align: center;
+    padding: .3rem 0;
+  }
+}
+
+/* 课后练习 */
+.topic {
+  .subject {
+    @include whBg(60%)
+    ul{
+      border: 0.01rem solid #F0F0F0;
+      padding: 0 0.1rem;
+      margin-bottom: .2rem;
+    }
+    li {
+      margin-top: 0;
+      padding: 0.1rem 0;
+      border-top: 0.01rem solid #F0F0F0;
+
+      .subject-name {
+        padding: 0.05rem 0.1rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 0.14rem;
+        color: #333333;
+      }
+
+      .title-answer {
+        color: #FFFFFF;
+        @include whBg(.3rem, .3rem, #CCCCCC)
+        margin-right: 0.1rem;
+        text-align: center;
+        line-height: 0.3rem;
+        font-size: 0.16rem;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .title-answer-CorrectChange {
+        background-color: #328ff4;
+      }
+      .title-answer-ErrorChange {
+        background-color: #fe5b5b;
+      }
+    }
+
+    .liActive {
+      background-color: #FEF9E5;
+    }
+
+    li:nth-child(1) {
+      border: none;
+    }
+  }
+
+  .topic-subject_list {
+    @include whBg(40%)
+  }
+
+  .subject_list {
+    @include whBg(96%)
+    margin-left: 4%;
+
+    .plat {
+      margin: 0;
+
+      span {
+        display: inline-block;
+
+        &:nth-child(1) {
+          @include whBg(60%)
+        }
+
+        &:nth-child(2) {
+         @include whBg(40%)
+        }
+      }
+    }
+  }
+
+  .topic-set {
+    text-align: center;
+
+    .bt-set {
+      margin-top: 0.2rem;
+    }
+  }
+}
+// 头部右对齐按钮组
+.Classevaluate-Setting {
+  @include flex($content: flex-end)
+  .Classevaluate-Setting-right {
+    padding: .13rem 0;
+
+    .tips {
+      color: #FCC800;
+      margin-right: 0.1rem;
+      font-size: 0.12rem;
+    }
+
+    .bt {
+      padding: 0 0.15rem;
+      @include whBg($height: .32rem)
+      line-height: 0.32rem;
+      margin: 0;
+      font-size: 0.12rem;
+    }
+  }
+}

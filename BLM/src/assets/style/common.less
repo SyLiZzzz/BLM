@@ -1,0 +1,37 @@
+// 图片铺满
+.imgSize(@w,@xSize,@ySize){
+  width: @w;
+  background-size: @xSize @ySize;
+  background-repeat: no-repeat;
+}
+// 样式居中
+.ele-Center(){
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+//手指指针
+.finger{
+  cursor: pointer;
+}
+// 鼠标悬浮转动
+.ele-Rotate(@deg){
+  transform: rotateY(@deg);
+}
+// 首页顶部选中时选项卡的底部样式
+.bottmStyle{
+  margin-top: -3px;
+  font-weight: bold;
+  color: #FCC800!important;
+  border-bottom: 2px solid #FCC800;
+}
+// 首页顶部选项卡的公共样式
+.noStyle{
+  list-style: none;
+  color: white;
+  font-size: 15.75px;
+  .finger
+}
